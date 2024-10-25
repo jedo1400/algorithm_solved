@@ -32,6 +32,10 @@ void drawStar(const short &n, deque<deque<bool>> before) {
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     short n;
     cin >> n;
 
