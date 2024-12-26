@@ -4,24 +4,23 @@
 using namespace std;
 
 int main() {
-    ios_base :: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+    
+    int n, m;
+    string str;
+    cin >> n >> m >> str;
 
-    string input;
-    int n, m, cnt = 0;
-    
-    cin >> n >> m >> input;
-    
-    n *= 2, ++n;
-    
-    for (int i = 0; i <= m-n; ++i) {
-        int j;
-        for (j = i; i <= i+n; ++j) {
-            if ((j-i) % 2 && input[j] == 'O') continue;
-            else if (!((j-i) % 2) && input[j] == 'I') continue;
-            else break;
-        }
-        if (j >= i+n) ++cnt;
-    } cout << cnt;
+    int cnt{}, IOI{};
+    for (int i{}; i < m;) {
+        if (str.substr(i, 3) == "IOI") {
+            ++IOI, i += 2; // "IO"I
+            if (IOI == n)
+                ++cnt, --IOI;
+        } else
+            ++i, IOI = 0;
+    }
+
+    cout << cnt;
 }
