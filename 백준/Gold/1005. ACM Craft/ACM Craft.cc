@@ -32,6 +32,10 @@ int bfs(vector<vector<int>> &con, vector<int> &delay, vector<int> &indegree, int
 }
 
 int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	
 	int t;
 	cin >> t;
 
